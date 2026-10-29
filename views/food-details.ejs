@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food-details</title>
+</head>
+
+<body>
+    <h1>food-details</h1>
+    <h2>
+        <%= food.name %>
+    </h2>
+    <ul>
+        <li>name : <%= food.name %>
+        </li>
+        <li>description : <%= food.description %>
+        </li>
+        <li><img src="<%= food.image %>" alt="<%= food.name %>_image"></li>
+    </ul>
+
+    <form action="/foods/<%= food.id %>/?_method=DELETE" method="Delete">
+        <button>Delete
+        </button>
+    </form>
+</body>
+
+</html>

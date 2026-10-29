@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food-list</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <%- include('./partials/navbar')%>
+        <h1>All Foods</h1>
+        <table>
+            <% for(let food of allFoods){ %>
+                <tr>
+                    <td>Name : <a href="/foods/<%= food.id %>">
+                            <%= food.name %>
+                        </a>
+                    </td>
+                    <td>Description : <%= food.description %>
+                    </td>
+                    <td><img src="<%= food.image %>" alt="<%= food.name %> image"></td>
+                    <td><a href="/foods/<%= food.id %>/edit">Edit</a></td>
+                </tr>
+                <% } %>
+        </table>
+</body>
+
+</html>
